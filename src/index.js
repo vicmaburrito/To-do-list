@@ -3,20 +3,19 @@ import './style.css';
 import 'bootstrap';
 
 function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+  const element = document.createElement('div');
 
-      // Add the image to our existing div.
-    const myIcon = new Image();
-    myIcon.src = Icon;
+  // Lodash, currently included via a script, is required for this line to work
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.classList.add('hello');
 
-    element.appendChild(myIcon);
+  // Add the image to our existing div.
+  const myIcon = new Image();
+  // myIcon.src = Icon;
 
+  element.appendChild(myIcon);
 
-    return element;
-  }
-  
-  document.body.appendChild(component());
+  return element;
+}
+
+document.body.appendChild(component());
