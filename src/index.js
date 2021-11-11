@@ -43,6 +43,12 @@ function saveTodosLocally() {
 
 function addEventsToCheckboxes() {
   const checkboxes = document.querySelectorAll('.checkbox');
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener('change', () => {
+      update(todos[index]);
+      saveTodosLocally();
+    });
+  });
 }
 
 window.addEventListener('load', () => {
