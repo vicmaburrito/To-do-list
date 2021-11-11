@@ -1,5 +1,4 @@
 import './style.css';
-import 'bootstrap';
 
 const button = document.querySelector('button');
 class Todo {
@@ -11,11 +10,8 @@ class Todo {
 }
 
 const todos = [
-  new Todo('Hello world 1', false, 0),
-  new Todo('Hello world 2', false, 1),
-  new Todo('Hello world 5', false, 4),
-  new Todo('Hello world 3', false, 2),
-  new Todo('Hello world 4', false, 3),
+  new Todo('Wash the dishes', false, 0),
+  new Todo('Complete To Do list project', false, 1),
 ];
 
 function populate() {

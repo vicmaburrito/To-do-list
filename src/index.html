@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO List</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
     <script defer src="main.js"></script>
   </head>
     <body>
         <section>
             <ul id="complete-list">
                 <li class="top-list-item">
-                    <div class="d-flex items">
+                    <div class="flex items">
                         <span>Today's Todo</span>
+                        <span class="material-icons"> sync </span>
                     </div>
                     <hr>
                 </li>
 
                 <li class="top-list-item">
-                    <div class="d-flex items">
+                    <div class="flex items">
                         <input placeholder="Add something To Do" type="text">
                     </div>
                     <hr>
                 </li>
-                <li id="button-li"><button type="button">Clear All Done's</button></li>
+                <li id="button-li"><button type="button">Clear All Done's</button><span></span></li>
             </ul>
         </section>
     </body>
