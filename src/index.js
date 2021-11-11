@@ -1,4 +1,5 @@
 import './style.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const button = document.querySelector('button');
 class Todo {
