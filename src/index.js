@@ -1,6 +1,7 @@
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import update from './update';
+import { createTodo, destroyTodo, updateTodo } from './controller.js';
 
 const button = document.querySelector('button');
 class Todo {
@@ -11,10 +12,7 @@ class Todo {
   }
 }
 
-let todos = [
-  new Todo('Wash the dishes', false, 0),
-  new Todo('Complete To Do list project', false, 1),
-];
+let todos = [];
 
 function populate() {
   todos.sort((a, b) => (a.index > b.index ? 1 : -1));
