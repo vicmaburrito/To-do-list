@@ -17,9 +17,9 @@ let todos = [];
 function createTodoItem(todo) {
   const li = document.createElement('li');
   li.innerHTML = `
-    <div class="flex">
+    <div class="flex todo-element">
       <div>
-          <input type="checkbox" class="checkbox"
+          <input type="checkbox" class="checkbox" 
           ${todo.completed ? 'checked' : ''}>
           <span>${todo.description}</span>
       </div>
@@ -28,6 +28,7 @@ function createTodoItem(todo) {
       </span>
     </div>
     <hr>`;
+
   return li;
 }
 
@@ -161,6 +162,7 @@ function addEventsToEditIcons() {
     });
   });
 }
+
 window.addEventListener('load', () => {
   const oldTodos = JSON.parse(localStorage.getItem('todos'));
   if (oldTodos) {
