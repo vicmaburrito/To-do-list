@@ -1,7 +1,7 @@
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import update from './update';
-import { createTodo, destroyTodo, updateTodo } from './controller.js';
+import { createTodo, destroyTodo, updateTodo } from './controller';
 
 const button = document.querySelector('button');
 class Todo {
@@ -14,24 +14,32 @@ class Todo {
 
 let todos = [];
 
-function populate() {
-  todos.sort((a, b) => (a.index > b.index ? 1 : -1));
-  todos.forEach((todo) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
+function createTodoItem(todo) {
+  const li = document.createElement('li');
+  li.innerHTML = `
     <div class="flex">
       <div>
           <input type="checkbox" class="checkbox"
           ${todo.completed ? 'checked' : ''}>
           <span>${todo.description}</span>
       </div>
-      <span class="material-icons">
+      <span class="material-icons edit-icon" style="cursor: pointer">
           more_vert
       </span>
     </div>
     <hr>`;
+  return li;
+}
 
-    button.parentElement.insertBefore(li, button);
+function addTodoItem(todo) {
+  const li = createTodoItem(todo);
+  button.parentElement.insertBefore(li, button);
+}
+
+function populate() {
+  todos.sort((a, b) => (a.index > b.index ? 1 : -1));
+  todos.forEach((todo) => {
+    addTodoItem(todo);
   });
 }
 
